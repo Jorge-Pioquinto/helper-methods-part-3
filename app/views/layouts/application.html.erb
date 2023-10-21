@@ -34,12 +34,11 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <%= link_to "Movies", movies_path, class: "nav-link active" %>
-            
+
             </li>
           </ul>
           <form class="d-flex" role="search">
@@ -50,19 +49,20 @@
       </div>
     </nav>
 
+    <div class="container mt-4">
+      <% if notice.present? %>
+        <div class="alert alert-success" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
 
-    <% if notice.present? %>
-      <div class="alert alert-success" role="alert">
-        <%= notice %>
-      </div>
-    <% end %>
+      <% if alert.present? %>
+        <div class="alert alert-danger" role="alert">
+          <%= alert %>
+        </div>
+      <% end %>
 
-    <% if alert.present? %>
-      <div class="alert alert-danger" role="alert">
-    <%= alert %>
-      </div>
-    <% end %>
-
-    <%= yield %>
+      <%= yield %>
+    </div>
   </body>
 </html>
